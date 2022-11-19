@@ -1,3 +1,5 @@
+# Sublime Text-specific ignores
+*.sublime-workspace
 
 # Godot-specific ignores
 .import/
