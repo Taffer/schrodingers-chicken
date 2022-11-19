@@ -1,5 +1,7 @@
 # Schrödinger's Chicken
 
+![Chicken](icon.svg)
+
 A chicken and a quantum superposition.
 
 This is named after
@@ -17,3 +19,9 @@ Currently mucking about in
 
 The graphics, sounds, fonts, and music are covered by their own specific
 licenses; see the individual directories for details.
+
+The chicken icon is from Kenney's
+[Animal Pack Redux](https://kenney.nl/assets/animal-pack-redux), which is
+released under a
+[CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+license.
