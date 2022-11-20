@@ -1,0 +1,56 @@
+[gd_scene load_steps=12 format=3 uid="uid://cgry2qu7wkcri"]
+
+[ext_resource type="Texture2D" uid="uid://b1ge3e56qu7t0" path="res://sprites/treasure chest.png" id="1_ure6l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csw5f"]
+atlas = ExtResource("1_ure6l")
+region = Rect2(0, 0, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj02u"]
+atlas = ExtResource("1_ure6l")
+region = Rect2(35, 0, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys2cr"]
+atlas = ExtResource("1_ure6l")
+region = Rect2(70, 0, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74l2h"]
+atlas = ExtResource("1_ure6l")
+region = Rect2(105, 0, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmoxb"]
+atlas = ExtResource("1_ure6l")
+region = Rect2(0, 35, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7o7ml"]
+atlas = ExtResource("1_ure6l")
+region = Rect2(35, 35, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vlce"]
+atlas = ExtResource("1_ure6l")
+region = Rect2(70, 35, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10oao"]
+atlas = ExtResource("1_ure6l")
+region = Rect2(105, 35, 35, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0fe21"]
+animations = [{
+"frames": [SubResource("AtlasTexture_csw5f"), SubResource("AtlasTexture_uj02u"), SubResource("AtlasTexture_ys2cr"), SubResource("AtlasTexture_74l2h"), SubResource("AtlasTexture_hmoxb"), SubResource("AtlasTexture_7o7ml"), SubResource("AtlasTexture_2vlce"), SubResource("AtlasTexture_10oao")],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1n64b"]
+size = Vector2(32, 28)
+
+[node name="TreasureChest" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+frames = SubResource("SpriteFrames_0fe21")
+frame = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1n64b")
