@@ -2,6 +2,7 @@ extends Area2D
 
 @export var speed: float = 250.0  # 400 pixels/sec
 var screen: Vector2 = Vector2.ZERO
+var pecking: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,7 +12,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var dir = Vector2.ZERO
-	var peck = false
 	
 	if Input.is_action_pressed("ui_left"):
 		dir.x -= 1.0
@@ -23,10 +23,10 @@ func _process(delta):
 		dir.y += 1.0
 
 	if Input.is_action_pressed("ui_accept"):
-		peck = true
+		pecking = true
 		
 	dir = dir.normalized()
-	if dir.length() > 0:
+	if dir.length() > 0 or pecking:
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
@@ -39,5 +39,11 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_h = dir.x > 0.0
 		
-	if peck:
+	if pecking:
 		$AnimatedSprite2D.animation = "peck"
+
+
+func _on_animated_sprite_2d_animation_finished():
+	if $AnimatedSprite2D.animation == "peck":
+		pecking = false
+
